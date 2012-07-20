@@ -19,6 +19,16 @@
 		2860E32E111B888700E27156 /* AppDelegate_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2860E32C111B888700E27156 /* AppDelegate_iPad.m */; };
 		2860E32F111B888700E27156 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2860E32D111B888700E27156 /* MainWindow_iPad.xib */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		77E2885515B9686600156499 /* 0000.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77E2884A15B9686600156499 /* 0000.jpg */; };
+		77E2885615B9686600156499 /* 0001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77E2884B15B9686600156499 /* 0001.jpg */; };
+		77E2885715B9686600156499 /* 0002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77E2884C15B9686600156499 /* 0002.jpg */; };
+		77E2885815B9686600156499 /* 0003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77E2884D15B9686600156499 /* 0003.jpg */; };
+		77E2885915B9686600156499 /* 0004.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77E2884E15B9686600156499 /* 0004.jpg */; };
+		77E2885A15B9686600156499 /* 0005.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77E2884F15B9686600156499 /* 0005.jpg */; };
+		77E2885B15B9686600156499 /* 0006.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77E2885015B9686600156499 /* 0006.jpg */; };
+		77E2885C15B9686600156499 /* 0007.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77E2885115B9686600156499 /* 0007.jpg */; };
+		77E2885D15B9686600156499 /* 0008.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77E2885215B9686600156499 /* 0008.jpg */; };
+		77E2885E15B9686600156499 /* 0009.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77E2885315B9686600156499 /* 0009.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +51,16 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Shared/main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* AirplayKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirplayKit_Prefix.pch; sourceTree = "<group>"; };
+		77E2884A15B9686600156499 /* 0000.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0000.jpg; sourceTree = "<group>"; };
+		77E2884B15B9686600156499 /* 0001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0001.jpg; sourceTree = "<group>"; };
+		77E2884C15B9686600156499 /* 0002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0002.jpg; sourceTree = "<group>"; };
+		77E2884D15B9686600156499 /* 0003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0003.jpg; sourceTree = "<group>"; };
+		77E2884E15B9686600156499 /* 0004.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0004.jpg; sourceTree = "<group>"; };
+		77E2884F15B9686600156499 /* 0005.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0005.jpg; sourceTree = "<group>"; };
+		77E2885015B9686600156499 /* 0006.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0006.jpg; sourceTree = "<group>"; };
+		77E2885115B9686600156499 /* 0007.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0007.jpg; sourceTree = "<group>"; };
+		77E2885215B9686600156499 /* 0008.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0008.jpg; sourceTree = "<group>"; };
+		77E2885315B9686600156499 /* 0009.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0009.jpg; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* AirplayKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AirplayKit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +154,16 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				77E2884A15B9686600156499 /* 0000.jpg */,
+				77E2884B15B9686600156499 /* 0001.jpg */,
+				77E2884C15B9686600156499 /* 0002.jpg */,
+				77E2884D15B9686600156499 /* 0003.jpg */,
+				77E2884E15B9686600156499 /* 0004.jpg */,
+				77E2884F15B9686600156499 /* 0005.jpg */,
+				77E2885015B9686600156499 /* 0006.jpg */,
+				77E2885115B9686600156499 /* 0007.jpg */,
+				77E2885215B9686600156499 /* 0008.jpg */,
+				77E2885315B9686600156499 /* 0009.jpg */,
 				32CA4F630368D1EE00C91783 /* AirplayKit_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -202,6 +232,16 @@
 			files = (
 				2860E329111B887F00E27156 /* MainWindow_iPhone.xib in Resources */,
 				2860E32F111B888700E27156 /* MainWindow_iPad.xib in Resources */,
+				77E2885515B9686600156499 /* 0000.jpg in Resources */,
+				77E2885615B9686600156499 /* 0001.jpg in Resources */,
+				77E2885715B9686600156499 /* 0002.jpg in Resources */,
+				77E2885815B9686600156499 /* 0003.jpg in Resources */,
+				77E2885915B9686600156499 /* 0004.jpg in Resources */,
+				77E2885A15B9686600156499 /* 0005.jpg in Resources */,
+				77E2885B15B9686600156499 /* 0006.jpg in Resources */,
+				77E2885C15B9686600156499 /* 0007.jpg in Resources */,
+				77E2885D15B9686600156499 /* 0008.jpg in Resources */,
+				77E2885E15B9686600156499 /* 0009.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "AKDevice.h"
 
+NSString *animationArray[] = {@"Dissolve",@"SwipeRight",@"SwipeLeft",@"PageCurl",@"CopyMachine",@"BarsSwipe",@"Ripple",@"Disintegrate",@"Mod",@"Flash"};
 
 @implementation AKDevice
 
@@ -95,9 +96,14 @@
 		
 		NSData *imageData = UIImageJPEGRepresentation(image, _imageQuality);
 		int length = [imageData length];
+        static int i = 0;
+        NSString *animationStr = animationArray[i];
+        i = (i+1)%(sizeof(animationArray)/sizeof(NSString*));
 		NSString *message = [[NSString alloc] initWithFormat:@"PUT /photo HTTP/1.1\r\n"
 							 "Content-Length: %d\r\n"
-							 "User-Agent: MediaControl/1.0\r\n\r\n", length];
+                             "X-Apple-Transition: %@\r\n"
+							 "User-Agent: MediaControl/1.0\r\n\r\n", length,animationStr];
+        
 		NSMutableData *messageData = [[NSMutableData alloc] initWithData:[message dataUsingEncoding:NSUTF8StringEncoding]];
 		[messageData appendData:imageData];
 		
