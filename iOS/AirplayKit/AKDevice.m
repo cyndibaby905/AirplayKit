@@ -55,6 +55,18 @@ NSString *animationArray[] = {@"Dissolve",@"SwipeRight",@"SwipeLeft",@"PageCurl"
 	[self.socket readDataWithTimeout:20.0 tag:1];
 }
 
+- (void) sendRawData:(NSData *)data needDelegate:(BOOL)isNeed {
+    if (isNeed) {
+        self.socket.delegate = self;
+    }
+    else {
+        self.socket.delegate = nil;
+    }
+    [self.socket writeData:data withTimeout:20 tag:1];
+	[self.socket readDataWithTimeout:20.0 tag:1];
+}
+
+
 - (void) sendRawMessage:(NSString *)message
 {
 	if(!okToSend)
@@ -63,6 +75,19 @@ NSString *animationArray[] = {@"Dissolve",@"SwipeRight",@"SwipeLeft",@"PageCurl"
 	}
 	
 	[self sendRawData:[message dataUsingEncoding:NSUTF8StringEncoding]];
+}
+
+- (void) sendRawMessage:(NSString *)message needDelegate:(BOOL)isNeed {
+    if(!okToSend)
+	{
+		queuedMessage = [message retain];
+	}
+	if (isNeed) {
+        [self sendRawData:[message dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    else {
+     	[self sendRawData:[message dataUsingEncoding:NSUTF8StringEncoding] needDelegate:NO];   
+    }
 }
 
 - (void) sendContentURL:(NSString *)url
@@ -119,7 +144,7 @@ NSString *animationArray[] = {@"Dissolve",@"SwipeRight",@"SwipeLeft",@"PageCurl"
 {
 	NSString *message = @"POST /stop HTTP/1.1\r\n"
 	"User-Agent: MediaControl/1.0\r\n\r\n";
-	[self sendRawMessage:message];
+	[self sendRawMessage:message needDelegate:NO];
 }
 
 - (void) sendReverse

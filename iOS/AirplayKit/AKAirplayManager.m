@@ -11,8 +11,8 @@
 
 @implementation AKAirplayManager
 
-@synthesize delegate, autoConnect, connectedDevice;
-
+@synthesize delegate, connectedDevice;
+@synthesize foundServices = foundServices_;
 #pragma mark -
 #pragma mark Initialization
 
@@ -20,8 +20,7 @@
 {
 	if((self = [super init]))
 	{
-		self.autoConnect = YES;
-		foundServices = [[NSMutableArray alloc] init];
+		self.foundServices = [NSMutableArray array];
 	}
 	
 	return self;
@@ -33,7 +32,7 @@
 - (void) findDevices
 {
 	NSLog(@"Finding Airport devices.");
-	
+	[self.foundServices removeAllObjects];
 	serviceBrowser = [[NSNetServiceBrowser alloc] init];
 	[serviceBrowser setDelegate:self];
 	[serviceBrowser searchForServicesOfType:@"_airplay._tcp" inDomain:@""];
@@ -58,9 +57,8 @@
 - (void)netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didFindService:(NSNetService *)aNetService moreComing:(BOOL)moreComing
 {
 	NSLog(@"Found service");
-	[aNetService setDelegate:self];
-	[aNetService resolveWithTimeout:20.0];
-	[foundServices addObject:aNetService];
+	
+	[self.foundServices addObject:aNetService];
 	
 	if(!moreComing)
 	{
@@ -86,10 +84,9 @@
 		[delegate manager:self didFindDevice:[device autorelease]];
 	}
 	
-	if(autoConnect && !connectedDevice)
-	{
-		[self connectToDevice:device];
-	}
+	
+    [self connectToDevice:device];
+	
 }
 
 #pragma mark -
@@ -101,6 +98,7 @@
 	
 	AKDevice *device = tempDevice;
 	device.socket = sock;
+    [sock release];
 	device.connected = YES;
 	
 	self.connectedDevice = device;
@@ -120,10 +118,18 @@
 - (void) dealloc
 {
 	[connectedDevice release];
-	[foundServices removeAllObjects];
-	[foundServices release];
-	
+	[self.foundServices removeAllObjects];
+    self.foundServices = nil;
 	[super dealloc];
+}
+
+
+
+- (void)resolveService:(NSNetService*)service withTimeOut:(CGFloat)timeOut {
+    [service stop];
+    [service setDelegate:self];
+	[service resolveWithTimeout:timeOut];
+
 }
 
 @end

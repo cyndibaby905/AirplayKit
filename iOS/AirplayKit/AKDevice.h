@@ -41,7 +41,9 @@
 @property (nonatomic) CGFloat imageQuality; // JPEG image quality for sending images. Defaults to 0.8;
 
 - (void) sendRawData:(NSData *)data;
+- (void) sendRawData:(NSData *)data needDelegate:(BOOL)isNeed;
 - (void) sendRawMessage:(NSString *)message; // Sends a raw HTTP string over Airplay.
+- (void) sendRawMessage:(NSString *)message needDelegate:(BOOL)isNeed;
 - (void) sendContentURL:(NSString *)url;
 - (void) sendImage:(UIImage *)image;
 - (void) sendImage:(UIImage *)image forceReady:(BOOL)ready;

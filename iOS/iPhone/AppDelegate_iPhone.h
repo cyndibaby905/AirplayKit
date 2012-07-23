@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AKAirplayManager.h"
 
-@interface AppDelegate_iPhone : NSObject <UIApplicationDelegate, AKAirplayManagerDelegate>
+@interface AppDelegate_iPhone : NSObject <UIApplicationDelegate, AKAirplayManagerDelegate,UIActionSheetDelegate>
 {
     UIWindow *window;
 	
@@ -19,6 +19,6 @@
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
 - (void) sendRemoteVideo;
-
+- (IBAction)showAvailableSource:(id)sender;
 @end
 

@@ -29,6 +29,10 @@
 		77E2885C15B9686600156499 /* 0007.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77E2885115B9686600156499 /* 0007.jpg */; };
 		77E2885D15B9686600156499 /* 0008.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77E2885215B9686600156499 /* 0008.jpg */; };
 		77E2885E15B9686600156499 /* 0009.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77E2885315B9686600156499 /* 0009.jpg */; };
+		77FE6F0B15BD52C900A43D8F /* airplay_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 77FE6F0915BD52C900A43D8F /* airplay_screen.png */; };
+		77FE6F0C15BD52C900A43D8F /* icn-check-black.png in Resources */ = {isa = PBXBuildFile; fileRef = 77FE6F0A15BD52C900A43D8F /* icn-check-black.png */; };
+		77FE6F0F15BD534C00A43D8F /* airplay.png in Resources */ = {isa = PBXBuildFile; fileRef = 77FE6F0E15BD534C00A43D8F /* airplay.png */; };
+		77FE6F1215BD545500A43D8F /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 77FE6F1015BD545500A43D8F /* UIDevice-Hardware.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +65,11 @@
 		77E2885115B9686600156499 /* 0007.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0007.jpg; sourceTree = "<group>"; };
 		77E2885215B9686600156499 /* 0008.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0008.jpg; sourceTree = "<group>"; };
 		77E2885315B9686600156499 /* 0009.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0009.jpg; sourceTree = "<group>"; };
+		77FE6F0915BD52C900A43D8F /* airplay_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airplay_screen.png; sourceTree = "<group>"; };
+		77FE6F0A15BD52C900A43D8F /* icn-check-black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn-check-black.png"; sourceTree = "<group>"; };
+		77FE6F0E15BD534C00A43D8F /* airplay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airplay.png; sourceTree = "<group>"; };
+		77FE6F1015BD545500A43D8F /* UIDevice-Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice-Hardware.m"; sourceTree = "<group>"; };
+		77FE6F1115BD545500A43D8F /* UIDevice-Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice-Hardware.h"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* AirplayKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AirplayKit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +141,8 @@
 		28EEBF621118D79A00187D67 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				77FE6F1015BD545500A43D8F /* UIDevice-Hardware.m */,
+				77FE6F1115BD545500A43D8F /* UIDevice-Hardware.h */,
 				8D1107310486CEB800E47090 /* AirplayKit-Info.plist */,
 			);
 			name = Shared;
@@ -154,6 +165,9 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				77FE6F0E15BD534C00A43D8F /* airplay.png */,
+				77FE6F0915BD52C900A43D8F /* airplay_screen.png */,
+				77FE6F0A15BD52C900A43D8F /* icn-check-black.png */,
 				77E2884A15B9686600156499 /* 0000.jpg */,
 				77E2884B15B9686600156499 /* 0001.jpg */,
 				77E2884C15B9686600156499 /* 0002.jpg */,
@@ -242,6 +256,9 @@
 				77E2885C15B9686600156499 /* 0007.jpg in Resources */,
 				77E2885D15B9686600156499 /* 0008.jpg in Resources */,
 				77E2885E15B9686600156499 /* 0009.jpg in Resources */,
+				77FE6F0B15BD52C900A43D8F /* airplay_screen.png in Resources */,
+				77FE6F0C15BD52C900A43D8F /* icn-check-black.png in Resources */,
+				77FE6F0F15BD534C00A43D8F /* airplay.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +275,7 @@
 				1FA873CA12EB488B0002D169 /* AKAirplayManager.m in Sources */,
 				1FA873CB12EB488B0002D169 /* AKDevice.m in Sources */,
 				1FA873CC12EB488B0002D169 /* AsyncSocket.m in Sources */,
+				77FE6F1215BD545500A43D8F /* UIDevice-Hardware.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
