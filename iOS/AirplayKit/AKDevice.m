@@ -12,7 +12,7 @@ NSString *animationArray[] = {@"Dissolve",@"SwipeRight",@"SwipeLeft",@"PageCurl"
 
 @implementation AKDevice
 
-@synthesize hostname, port, delegate, connected, socket;
+@synthesize hostname, port, delegate, connected, socket,deviceName;
 @synthesize imageQuality = _imageQuality;
 
 #pragma mark -
@@ -93,12 +93,12 @@ NSString *animationArray[] = {@"Dissolve",@"SwipeRight",@"SwipeLeft",@"PageCurl"
 - (void) sendContentURL:(NSString *)url
 {	
 	NSString *body = [[NSString alloc] initWithFormat:@"Content-Location: %@\r\n"
-														"Start-Position: 0\r\n\r\n", url];
+                      "Start-Position: 0\r\n\r\n", url];
 	int length = [body length];
 	
 	NSString *message = [[NSString alloc] initWithFormat:@"POST /play HTTP/1.1\r\n"
-															 "Content-Length: %d\r\n"
-															 "User-Agent: MediaControl/1.0\r\n\r\n%@", length, body];
+                         "Content-Length: %d\r\n"
+                         "User-Agent: MediaControl/1.0\r\n\r\n%@", length, body];
 	
 	
 	[self sendRawMessage:message];
@@ -186,8 +186,9 @@ NSString *animationArray[] = {@"Dissolve",@"SwipeRight",@"SwipeLeft",@"PageCurl"
 - (void) dealloc
 {
 	[self sendStop];
-	[socket release];
-	[hostname release];
+	self.socket = nil;
+    self.hostname = nil;
+    self.deviceName = nil;
 	[super dealloc];
 }
 

@@ -65,6 +65,21 @@
 		[serviceBrowser stop];
 		[serviceBrowser release];
 		serviceBrowser = nil;
+        
+        BOOL needDisconnectDevice = YES;
+        if (self.connectedDevice) {
+            for (NSNetService *service in self.foundServices) {
+                if ([service.name isEqualToString:self.connectedDevice.deviceName]) {
+                    needDisconnectDevice = NO;
+                    break;
+                }
+            }
+        }
+        
+        if (needDisconnectDevice) {
+            self.connectedDevice = nil;
+        }
+        
 	}
 }
 
@@ -76,6 +91,7 @@
 	NSLog(@"Resolved service: %@:%d", sender.hostName, sender.port);
 	
 	AKDevice *device = [[AKDevice alloc] init];
+    device.deviceName = sender.name;
 	device.hostname = sender.hostName;
 	device.port = sender.port;
 	
@@ -117,7 +133,7 @@
 
 - (void) dealloc
 {
-	[connectedDevice release];
+	self.connectedDevice = nil;
 	[self.foundServices removeAllObjects];
     self.foundServices = nil;
 	[super dealloc];
@@ -129,7 +145,7 @@
     [service stop];
     [service setDelegate:self];
 	[service resolveWithTimeout:timeOut];
-
+    
 }
 
 @end

@@ -33,6 +33,7 @@
 }
 
 @property (nonatomic, readonly) NSString *displayName;
+@property (nonatomic, copy) NSString *deviceName;
 @property (nonatomic, retain) NSString *hostname;
 @property (nonatomic) UInt16 port;
 @property (nonatomic, assign) id <AKDeviceDelegate> delegate;
