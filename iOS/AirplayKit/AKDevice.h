@@ -16,7 +16,7 @@
 @optional
 
 - (void) device:(AKDevice *)device didSendBackMessage:(NSString *)message;
-
+- (void) socketDidDisconnectedWithDevice:(AKDevice *)device;
 @end
 
 

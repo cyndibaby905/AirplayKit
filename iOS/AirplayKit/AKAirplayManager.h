@@ -21,7 +21,7 @@
 @end
 
 
-@interface AKAirplayManager : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate>
+@interface AKAirplayManager : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate,AKDeviceDelegate>
 {
 @private
 	id <AKAirplayManagerDelegate> delegate;

@@ -105,6 +105,16 @@
 	
 }
 
+- (void)netServiceDidStop:(NSNetService *)sender {
+    if (self.connectedDevice) {
+        if ([sender.name isEqualToString:self.connectedDevice.deviceName]) {
+            self.connectedDevice = nil;
+        }
+    }
+}
+
+
+
 #pragma mark -
 #pragma mark AsyncSocket Delegate
 
@@ -146,6 +156,18 @@
     [service setDelegate:self];
 	[service resolveWithTimeout:timeOut];
     
+}
+
+#pragma mark -
+#pragma mark AKDeviceDelegate
+
+- (void) device:(AKDevice *)device didSendBackMessage:(NSString *)message {
+    NSLog(@"didSendBackMessage:%@",message);
+}
+
+- (void) socketDidDisconnectedWithDevice:(AKDevice *)device {
+    self.connectedDevice.connected = NO;
+    self.connectedDevice = nil;
 }
 
 @end

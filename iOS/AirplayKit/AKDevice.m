@@ -164,9 +164,11 @@ NSString *animationArray[] = {@"Dissolve",@"SwipeRight",@"SwipeLeft",@"PageCurl"
 
 - (void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
 {
+    NSString *message = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
 	if([delegate respondsToSelector:@selector(device:didSendBackMessage:)])
 	{
-		NSString *message = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+		
 		[delegate device:self didSendBackMessage:[message autorelease]];
 	}
 	
@@ -179,6 +181,13 @@ NSString *animationArray[] = {@"Dissolve",@"SwipeRight",@"SwipeLeft",@"PageCurl"
 		queuedMessage = nil;
 	}
 }
+
+- (void)onSocketDidDisconnect:(AsyncSocket *)sock {
+    if([delegate respondsToSelector:@selector(socketDidDisconnectedWithDevice:)]) {
+        [delegate socketDidDisconnectedWithDevice:self];
+    }
+}
+
 
 #pragma mark -
 #pragma mark Cleanup
